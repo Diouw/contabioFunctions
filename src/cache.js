@@ -1,10 +1,10 @@
 (function (global) {
 
-  const Biofinance = global.Biofinance || {};
+  const Contabio = global.Contabio || {};
 
   // ================= CACHE =================
 
-  Biofinance.salvarCache = function (pagina, email, contaID, data) {
+  Contabio.salvarCache = function (pagina, email, contaID, data) {
     try {
       const chave = `cache_${pagina}_${email}_${contaID}`;
 
@@ -20,7 +20,7 @@
     }
   };
 
-  Biofinance.lerCache = function (pagina, email, contaID) {
+  Contabio.lerCache = function (pagina, email, contaID) {
     try {
       const chave = `cache_${pagina}_${email}_${contaID}`;
       const cacheString = localStorage.getItem(chave);
@@ -45,7 +45,7 @@
     }
   };
 
-  Biofinance.limparCache = function (pagina, email, contaID) {
+  Contabio.limparCache = function (pagina, email, contaID) {
     try {
       const chave = `cache_${pagina}_${email}_${contaID}`;
       localStorage.removeItem(chave);
@@ -55,8 +55,16 @@
     }
   };
 
+    Contabio.teste = function (teste) {
+    try {
+      console.log("teste:", teste);
+    } catch (error) {
+      console.error("Erro ao enviar teste:", error);
+    }
+  };
+
   // ================= EXPORT =================
 
-  global.Biofinance = Biofinance;
+  global.Contabio = Contabio;
 
 })(window);
